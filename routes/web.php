@@ -27,3 +27,9 @@ Route::get('/', 'ListController@show');
 Route::get('dashboard', function () {
     return redirect('home/dashboard');
 });
+
+/*20200812 1340 */
+Route::get('moHomePage',function() {
+    return view('moHomePage');
+
+});
