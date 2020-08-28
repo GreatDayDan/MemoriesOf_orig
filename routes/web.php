@@ -18,7 +18,7 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('events','eventController');
+Route::resource('moevents','moeventsController');
 //Route::resource('families','familyController');
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
@@ -29,7 +29,15 @@ Route::get('dashboard', function () {
 });
 
 /*20200812 1340 */
-Route::get('moHomePage',function() {
-    return view('moHomePage');
+Route::get('Home',function() {
+    return view('Home');
 
+});
+Route::get('/moevents', function(){
+    return view('moevents');
+});
+
+
+Route::get('/mofamilies', function(){
+    return view('mofamilies');
 });
