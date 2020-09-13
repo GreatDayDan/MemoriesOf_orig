@@ -1,10 +1,11 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMoEventsTable extends Migration
+use App\Mo_Event;
+
+class CreateMo_EventsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +14,7 @@ class CreateMoEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('moEvents', function (Blueprint $table) {
+        Schema::create('mo_Events', function (Blueprint $table) {
             $table->id();
 //            $table->foreignid('post_id')->references('id')->on('posts');
             $table->foreignid('user->id')->references('id')->on('users');
@@ -30,6 +31,6 @@ class CreateMoEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('moevents');
+        Schema::dropIfExists('mo_events');
     }
 }
