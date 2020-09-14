@@ -29,6 +29,6 @@ class CreateMoEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('moEvents');
+        Schema::dropIfExists('Moevent');
     }
 }

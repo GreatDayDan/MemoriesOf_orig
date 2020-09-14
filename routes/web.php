@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Mo_Event;
+use App\MoEvent;
 
 
 /*
@@ -15,22 +15,21 @@ use App\Mo_Event;
 |
 */
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/', function () {
     return view('home');
 });
 Route::get('/about', function () {
     return view('about', [
-        'Mo_Event' => Mo_Event::latest()->get()
+        'Moevent' => Moevent::latest()->get()
     ]);
 });
-Route::get('Home',function() {
-    return view('xxx');
-
-});
-Route::get('/moevents', function(){
-    return view('moevents');
+//Route::get('Home',function() {
+//    return view('xxx');
+//});
+Route::get('/moevent', function(){
+    return view('moevent');
 });
 
 
@@ -38,10 +37,13 @@ Route::get('/mofamilies', function(){
     return view('mofamilies');
 });
 
-Route::resource('moevents','MoeventController');
-//Route::resource('families','familyController');
+Route::resource('/Moevent','MoeventController');
+
 route::redirect('moevent','home' );
 
+Route::get('/dashboard', function () {
+    return redirect('home/dashboard');
+});
 
 //<<<<<<< HEAD
 //Route::get('app\Http\Controllers\Mo_Event\{id}', [Mo_EventController::class, 'show']);
@@ -63,8 +65,6 @@ route::redirect('moevent','home' );
 //Route::resource('moEvent','moEventsController');
 ////Route::resource('families','familyController');
 //
-//Route::get('/home', 'home@index')->name('home')->middleware('auth');
-//Route::get('/', 'home@show');
 //
 //Route::get('dashboard', function () {
 //    console.log('web.php: Route::get dashboard');

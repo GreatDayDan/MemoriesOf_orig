@@ -1,4 +1,4 @@
-@extends('moevents.layout')
+@extends('Moevent.layout')
 
 @section('content')
     <div class="row">

@@ -15,9 +15,9 @@ class MoeventController extends Controller
      */
     public function index()
     {
-        $events = Moevent::latest()->paginate(5);
+        $Moevent = Moevent::latest()->paginate(5);
 
-        return view('events.index',compact('events'))
+        return view('Moevent.index',compact('Moevent'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -28,7 +28,7 @@ class MoeventController extends Controller
      */
     public function create()
     {
-        return view('events.create');
+        return view('Moevent.create');
     }
 
     /**
@@ -40,13 +40,13 @@ class MoeventController extends Controller
     public function store(Request $request)
     {    {
         $request->validate([
-            'event' => 'required',
+            'Moevent' => 'required',
             'detail' => 'required',
         ]);
 
         Moevent::create($request->all());
 
-        return redirect()->route('events.index')
+        return redirect()->route('Moevent.index')
             ->with('success','Event created successfully.');
     }
     }
@@ -54,23 +54,23 @@ class MoeventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Moevent  $moEvents
+     * @param  \App\Moevent  $Moevent
      * @return \Illuminate\Http\Response
      */
-    public function show(Moevent $moEvents)
+    public function show(Moevent $moEvent)
     {
-        return view('events.show',compact('events'));
+        return view('Moevent.show',compact('Moevent'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Moevent  $moEvents
+     * @param  \App\Moevent  $Moevent
      * @return \Illuminate\Http\Response
      */
-    public function edit(Moevent $moEvents)
+    public function edit(Moevent $Moevent)
     {
-        return view('events.edit',compact('event'));
+        return view('Moevent.edit',compact('Moevent'));
 
     }
 
@@ -78,33 +78,33 @@ class MoeventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Moevent  $moEvents
+     * @param  \App\Moevent  $Moevent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Moevent $moEvents)
+    public function update(Request $request, Moevent $moEvent)
     {
         $request->validate([
-            'event' => 'required',
+            'Moevent' => 'required',
             'detail' => 'required',
         ]);
 
-        $events->update($request->all());
+        $Moevent->update($request->all());
 
-        return redirect()->route('events.index')
+        return redirect()->route('Moevent.index')
             ->with('success','event updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Moevent  $moEvents
+     * @param  \App\Moevent  $moEvent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Moevent $moEvents)
+    public function destroy(Moevent $moEvent)
     {
-        $events->delete();
+        $Moevent->delete();
 
-        return redirect()->route('events.index')
+        return redirect()->route('Moevent.index')
             ->with('success','event deleted successfully');
     }
 }
