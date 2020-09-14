@@ -90,7 +90,7 @@
      <div class="flex-center position-ref full-height">
         @if (Route::has('login'))
                 <div class="top-right links">
-                    <a href="{{ route('moevents') }}">Show Events</a>
+                    <a href="{{ route('moevents.index') }}">Show Events</a>
 {{--                    <a href="{{ route('mofamilies') }}">Show Families</a>--}}
                     @auth
                         <a href="{{ url('/home') }}">Home</a>

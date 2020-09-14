@@ -43,6 +43,6 @@ Route::get('/mofamilies', function(){
     return view('mofamilies');
 });
 
-Route::resource('moevents','moeventsController@index');
+Route::resource('moevents','MoeventController');
 //Route::resource('families','familyController');
 route::redirect('moevent','home' );

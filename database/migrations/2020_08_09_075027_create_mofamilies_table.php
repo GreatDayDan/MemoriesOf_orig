@@ -13,7 +13,7 @@ class CreateMoFamiliesTable extends Migration
      */
     public function up()
     {
-        Schema::create('moFamilies', function (Blueprint $table) {
+        Schema::create('mofamilies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });

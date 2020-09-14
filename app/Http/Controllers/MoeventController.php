@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\moEvents;
+use App\Moevent;
 use Illuminate\Http\Request;
 
 
-class moEventsController extends Controller
+class MoeventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class moEventsController extends Controller
      */
     public function index()
     {
-        $events = moEvents::latest()->paginate(5);
+        $events = Moevent::latest()->paginate(5);
 
         return view('events.index',compact('events'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -44,7 +44,7 @@ class moEventsController extends Controller
             'detail' => 'required',
         ]);
 
-        moEvents::create($request->all());
+        Moevent::create($request->all());
 
         return redirect()->route('events.index')
             ->with('success','Event created successfully.');
@@ -54,10 +54,10 @@ class moEventsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\moEvents  $moEvents
+     * @param  \App\Moevent  $moEvents
      * @return \Illuminate\Http\Response
      */
-    public function show(moEvents $moEvents)
+    public function show(Moevent $moEvents)
     {
         return view('events.show',compact('events'));
     }
@@ -65,10 +65,10 @@ class moEventsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\moEvents  $moEvents
+     * @param  \App\Moevent  $moEvents
      * @return \Illuminate\Http\Response
      */
-    public function edit(moEvents $moEvents)
+    public function edit(Moevent $moEvents)
     {
         return view('events.edit',compact('event'));
 
@@ -78,10 +78,10 @@ class moEventsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\moEvents  $moEvents
+     * @param  \App\Moevent  $moEvents
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, moEvents $moEvents)
+    public function update(Request $request, Moevent $moEvents)
     {
         $request->validate([
             'event' => 'required',
@@ -97,10 +97,10 @@ class moEventsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\moEvents  $moEvents
+     * @param  \App\Moevent  $moEvents
      * @return \Illuminate\Http\Response
      */
-    public function destroy(moEvents $moEvents)
+    public function destroy(Moevent $moEvents)
     {
         $events->delete();
 
