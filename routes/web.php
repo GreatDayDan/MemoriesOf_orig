@@ -20,20 +20,45 @@ Auth::routes();
 Route::get('/', function () {
     return view('home');
 });
-Route::get('app\Http\Controllers\Mo_Event\{id}', [Mo_EventController::class, 'show']);
-Route::get('App\Http\Controllers\User\{id}', [USerController::class, 'user.profile']);
-
-
 Route::get('/about', function () {
     return view('about', [
         'Mo_Event' => Mo_Event::latest()->get()
     ]);
 });
+Route::get('Home',function() {
+    return view('xxx');
+
+});
+Route::get('/moevents', function(){
+    return view('moevents');
+});
 
 
-Route::get('/mo_Event', 'Mo_EventContoller@index');
-Route::get('/Mo_Event/{Mo_Event}', 'Mo_EventController@show');
+Route::get('/mofamilies', function(){
+    return view('mofamilies');
+});
 
+Route::resource('moevents','MoeventController');
+//Route::resource('families','familyController');
+route::redirect('moevent','home' );
+
+
+//<<<<<<< HEAD
+//Route::get('app\Http\Controllers\Mo_Event\{id}', [Mo_EventController::class, 'show']);
+//Route::get('App\Http\Controllers\User\{id}', [USerController::class, 'user.profile']);
+//=======
+
+//Route::get('/user', 'UserController@index');
+
+//>>>>>>> 2d9e729a1dd7f99c08c9e3415119332369be82eb
+
+
+
+//<<<<<<< HEAD
+//
+//Route::get('/mo_Event', 'Mo_EventContoller@index');
+//Route::get('/Mo_Event/{Mo_Event}', 'Mo_EventController@show');
+//
 
 //Route::resource('moEvent','moEventsController');
 ////Route::resource('families','familyController');
@@ -54,3 +79,6 @@ Route::get('/Mo_Event/{Mo_Event}', 'Mo_EventController@show');
 //    return view('moHomePage');
 //
 //});
+//=======
+/*20200812 1340 */
+//>>>>>>> 2d9e729a1dd7f99c08c9e3415119332369be82eb

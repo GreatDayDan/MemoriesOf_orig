@@ -13,8 +13,11 @@ class CreateMoEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('moEvents', function (Blueprint $table) {
+        Schema::create('moevents', function (Blueprint $table) {
             $table->id();
+            $table->foreignid('user->id')->references('id')->on('users');
+            $table->string('event');
+            $table->string('description');
             $table->timestamps();
         });
     }
