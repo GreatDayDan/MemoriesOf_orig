@@ -1,5 +1,5 @@
 resources/views/moevents/edit.blade.php
-@extends('Moevent.layout')
+@extends('moevent.layout')
 
 @section('content')
     <div class="row">

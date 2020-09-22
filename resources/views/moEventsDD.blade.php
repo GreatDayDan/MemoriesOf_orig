@@ -15,7 +15,7 @@
                     <form name='f1' method="POST" action="process_post.php">
                         <fieldset>
                             <legend> Select an Event </legend>
-                            $Mo_Event = moEvents::all();
+                            $Mo_Event = moevents::all();
                             <select class="dropdown" id="eventsdd" name="eventsdropdown" title="Events Dropdown"  onclick="doclick(this)" >
                               <?php
                                  foreach ($Mo_Event as $Mo_Event){?>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-//        $this->middleware('auth');
+        $this->middleware('auth');
+        Log::info('gdd 055 __consrtuct HomeController');
     }
 
     /**
@@ -23,8 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        console.log('HomeController.php: function index, return view (home)');
-
-        return view('Home');
+        return view('home');
+        Log::info('gdd 056 index HomeController');
     }
 }

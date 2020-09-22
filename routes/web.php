@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\MoEvent;
-
-
+use Illuminate\Support\Facades\Log;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,70 +13,58 @@ use App\MoEvent;
 |
 */
 
-//Auth::routes();
-
 Route::get('/', function () {
-    return view('home');
+    log::debug('gdd 01 Route::get(/,  function () {return view(welcome');
+    return view('welcome');
 });
-Route::get('/about', function () {
-    return view('about', [
-        'Moevent' => Moevent::latest()->get()
-    ]);
+
+//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//    return view('dashboard');
+//})->name('dashboard');
+
+Auth::routes();
+Route::get('/home1', function () {
+    log::debug('gdd 02 Route::get(/home,  function () {return view(welcome');
+    return view('welcome');
 });
-//Route::get('Home',function() {
-//    return view('xxx');
-//});
-Route::get('/moevent', function(){
-    return view('moevent');
+
+Route::get('/home2', [App\Http\Controllers\HomeController::class, 'index'])->name('about');
+
+Route::get('/home3', 'App\Http\Controllers\HomeController@index');
+Route::get('/home4', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/event', function () {
+    log::debug('gdd 03 Route::get(/event,  function () {return view(event)');
+    return view('event');
 });
 
 
-Route::get('/mofamilies', function(){
-    return view('mofamilies');
+Route::get('/front', function () {
+    log::debug('gdd 04 Route::get(/front,  function () {return view(front)');
+    return view('front');
 });
 
-Route::resource('/Moevent','MoeventController');
-
-route::redirect('moevent','home' );
 
 Route::get('/dashboard', function () {
-    return redirect('home/dashboard');
+    log::debug('gdd 05 Route::get(/dashboard,  function () {return view(dasshboard)');
+    return view('dashboard');
 });
 
-//<<<<<<< HEAD
-//Route::get('app\Http\Controllers\Mo_Event\{id}', [Mo_EventController::class, 'show']);
-//Route::get('App\Http\Controllers\User\{id}', [USerController::class, 'user.profile']);
-//=======
-
-//Route::get('/user', 'UserController@index');
-
-//>>>>>>> 2d9e729a1dd7f99c08c9e3415119332369be82eb
-
+Route::get('/events', function () {
+    log::debug('gdd 031 Route:
+    :get(/events,  function () {return view(eventsdd)');
+    return view('events');
+});
+//
+//Route::resource('/events', 'EventController');
 
 
-//<<<<<<< HEAD
-//
-//Route::get('/mo_Event', 'Mo_EventContoller@index');
-//Route::get('/Mo_Event/{Mo_Event}', 'Mo_EventController@show');
-//
+Route::get('/about', function () {
+   log::debug('gdd 03.1 Route about');
+   return view('about');
+});
 
-//Route::resource('moEvent','moEventsController');
-////Route::resource('families','familyController');
-//
-//
-//Route::get('dashboard', function () {
-//    console.log('web.php: Route::get dashboard');
-//
-//    return redirect('home/dashboard');
-//
-//});
-//
-//
-///*20200812 1340 */
-//Route::get('Home',function() {
-//    return view('moHomePage');
-//
-//});
-//=======
-/*20200812 1340 */
-//>>>>>>> 2d9e729a1dd7f99c08c9e3415119332369be82eb
+Route::resource('events2', 'EventController');
+
+Route::resource('home5', 'HomeController');

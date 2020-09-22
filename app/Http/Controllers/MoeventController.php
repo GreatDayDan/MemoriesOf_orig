@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Moevent;
+use App\moevent;
 use Illuminate\Http\Request;
 
 
 class MoeventController extends Controller
-{
+ {
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +15,10 @@ class MoeventController extends Controller
      */
     public function index()
     {
-        $Moevent = Moevent::latest()->paginate(5);
+        Log::info('Moevent index()');
+        $moevent = moevent::latest()->paginate(5);
 
-        return view('Moevent.index',compact('Moevent'))
+        return view('moevent.index',compact('moevent'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,8 +28,8 @@ class MoeventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('Moevent.create');
+    {Log::info('Moevent create()');
+        return view('moevent.create');
     }
 
     /**
@@ -38,15 +39,15 @@ class MoeventController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {    {
+    {  Log::info('Moevent store()');  {
         $request->validate([
-            'Moevent' => 'required',
+            'moevent' => 'required',
             'detail' => 'required',
         ]);
 
-        Moevent::create($request->all());
+        moevent::create($request->all());
 
-        return redirect()->route('Moevent.index')
+        return redirect()->route('moevent.index')
             ->with('success','Event created successfully.');
     }
     }
@@ -54,23 +55,23 @@ class MoeventController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Moevent  $Moevent
+     * @param  \App\moevent  $moevent
      * @return \Illuminate\Http\Response
      */
-    public function show(Moevent $moEvent)
-    {
-        return view('Moevent.show',compact('Moevent'));
+    public function show(moevent $moevent)
+    {  Log::info('Moevent show()');
+        return view('moevent.show',compact('moevent'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Moevent  $Moevent
+     * @param  \App\moevent  $moevent
      * @return \Illuminate\Http\Response
      */
-    public function edit(Moevent $Moevent)
-    {
-        return view('Moevent.edit',compact('Moevent'));
+    public function edit(moevent $moevent)
+    { Log::info('Moevent edit()');
+        return view('moevent.edit',compact('moevent'));
 
     }
 
@@ -78,33 +79,33 @@ class MoeventController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Moevent  $Moevent
+     * @param  \App\moevent  $moevent
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Moevent $moEvent)
-    {
+    public function update(Request $request, moevent $moevent)
+    { Log::info('Moevent update()');
         $request->validate([
-            'Moevent' => 'required',
+            'moevent' => 'required',
             'detail' => 'required',
         ]);
 
-        $Moevent->update($request->all());
+        $moevent->update($request->all());
 
-        return redirect()->route('Moevent.index')
+        return redirect()->route('moevent.index')
             ->with('success','event updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Moevent  $moEvent
+     * @param  \App\moevent  $moevent
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Moevent $moEvent)
-    {
-        $Moevent->delete();
+    public function destroy(moevent $moevent)
+    { Log::info('Moevent destroy()');
+        $moevent->delete();
 
-        return redirect()->route('Moevent.index')
+        return redirect()->route('moevent.index')
             ->with('success','event deleted successfully');
     }
 }

@@ -1,2 +1,2 @@
 <?php
-echo 'Moevent';
+echo 'moevent';
