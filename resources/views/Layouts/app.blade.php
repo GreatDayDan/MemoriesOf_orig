@@ -43,7 +43,6 @@
         </div>
 
 {{--        @stack('modals')--}}
-        <livewire:counter />
         @livewireScripts
     </body>
 </html>

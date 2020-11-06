@@ -83,7 +83,7 @@ class EventmoController extends Controller
 
             // redirect
 //            Session::flash('message', 'Successfully created Event!');
-            return Redirect::to('eventmo.frontpage');
+            return Redirect::to('frontpage');
         }
     }
 //         return back()->withSuccess('Event added successfullyz!');

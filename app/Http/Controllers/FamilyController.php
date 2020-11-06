@@ -99,7 +99,7 @@ class FamilyController extends Controller
 
             // redirect
 //            Session::flash('message', 'Successfully created Event!');
-            return Redirect::to('family.frontpage');
+            return Redirect::to('frontpage');
 //        }
     }
 //         return back()->withSuccess('Event added successfullyz!');

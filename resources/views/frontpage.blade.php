@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Layouts.app')
 @section('content')
     <div class="container">
         <div class="mo">
@@ -24,6 +24,7 @@
                         <div>
                             <P>
                                 <a href="{{ url('/selectevent') }}">--Show Events</a>
+                                <a href="{{ url('/selectfamily') }}">--Show Families</a>
                             </P>
                         </div>
 

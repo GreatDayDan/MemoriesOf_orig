@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 route::get('/frontpage', function() {
     log::debug('gdd 01.2');
-    return view ('eventmo.frontpage');
+    return view ('frontpage');
 });
 
 Route::get('/selectevent', 'App\Http\Controllers\EventmoController@index');// works
