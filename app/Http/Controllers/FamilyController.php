@@ -56,7 +56,7 @@ class FamilyController extends Controller
 //            $userid = -1;
 //        }
         $user = auth()->user();
-
+dd($request);
 //        log::debug('gdd 07.11: ' . print_r($request,true));
 
 //        $validator = Validator::make($request->all(), [
@@ -81,17 +81,18 @@ class FamilyController extends Controller
 //            // store
 
 //           Log::debug('gdd 07.13 succeeded id: ' . $request->request->#parameters->_token);
-
             $family = new family(array(
 //                'userid' => $request->get('userid'),
-                'userid' => '1',
+                'userid' => $request->get('userid'),
                 'eventid' => $request->get('eventid'),
                 'postsid' => $request->get('postsid'),
-                'familyname' => $request->get('NewFamily'),
-                'description' => $request->input('DESCRIPTION')));
-//        $name = $request->input('name');
-        dd($family);
-            Log::debug('gdd 07.14 id: ' . $family->id);
+                'familyname' => $request->get('familyname'),
+                'description' => $request->get('DESCRIPTION')));
+//            $name = $request->input('familyname');
+            dd($family);
+        Log::debug('gdd 07.14 id: ' . $family->id);
+            log::debug('$family: '. var_dump($family));
+
             $family->save();
             Log::debug('gdd 07.15 saved. Return to family view' . $family->id);
 //        return view ('events');
@@ -161,3 +162,57 @@ class FamilyController extends Controller
         //
     }
 }
+
+//Illuminate\Http\Request {#43 ▼
+//    #json: null
+//    #convertedFiles: null
+//    #userResolver: Closure($guard = null) {#1226 ▶}
+//    #routeResolver: Closure() {#1235 ▶}
+//    +attributes: Symfony\Component\HttpFoundation\ParameterBag {#45 ▶}
+//        +request: Symfony\Component\HttpFoundation\ParameterBag {#44 ▼
+//            #parameters: array:7 [▼
+//            "_token" => "PFaBtTfejnuVE0qQN91Si8e6Ey6PnO5vZ1w5unhk"
+//      "family_id" => "'Select a family'"
+//      "NewFamily" => "Submit"
+//      "postid" => null
+//      "eventid" => null
+//      "description" => "my descr"
+//      "userId" => "1"
+//    ]
+//  }
+//  +query: Symfony\Component\HttpFoundation\InputBag {#51 ▼
+//            #parameters: []
+//        }
+//  +server: Symfony\Component\HttpFoundation\ServerBag {#47 ▶}
+//            +files: Symfony\Component\HttpFoundation\FileBag {#48 ▶}
+//                +cookies: Symfony\Component\HttpFoundation\InputBag {#46 ▼
+//                    #parameters: array:2 [▶]
+//                }
+//  +headers: Symfony\Component\HttpFoundation\HeaderBag {#49 ▶}
+//                    #content: null
+//                    #languages: null
+//                    #charsets: null
+//                    #encodings: null
+//                    #acceptableContentTypes: null
+//                    #pathInfo: "/storefamily"
+//                    #requestUri: "/storefamily"
+//                    #baseUrl: ""
+//                    #basePath: null
+//                    #method: "POST"
+//                    #format: null
+//                    #session: Illuminate\Session\Store {#1264 ▼
+//                    #id: "DgduzZyJ75cehLMkeDaTmhy1j8P4TpMuqjRdsglx"
+//                    #name: "memoriesof_session"
+//                    #attributes: array:3 [▶]
+//                    #handler: Illuminate\Session\FileSessionHandler {#1263 ▶}
+//                    #started: true
+//                }
+//  #locale: null
+//  #defaultLocale: "en"
+//  -preferredFormat: null
+//                -isHostValid: true
+//                -isForwardedValid: true
+//                -isSafeContentPreferred: null
+//  basePath: ""
+//  format: "html"
+//}

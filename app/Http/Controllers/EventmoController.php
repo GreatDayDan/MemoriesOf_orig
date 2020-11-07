@@ -71,6 +71,7 @@ class EventmoController extends Controller
             $eventmo = new eventmo(array(
                 'userid' => $request->get('userid'),
                 'postsid' => $request->get('postsid'),
+                'familyid' => $request->get('familyid'),
                 'eventname' => $request->get('eventname'),
                 'description' => $request->get('description')));
 //        dd($request);

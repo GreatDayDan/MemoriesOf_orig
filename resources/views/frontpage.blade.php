@@ -24,7 +24,9 @@
                         <div>
                             <P>
                                 <a href="{{ url('/selectevent') }}">--Show Events</a>
+                                <br>
                                 <a href="{{ url('/selectfamily') }}">--Show Families</a>
+                                <br>
                             </P>
                         </div>
 

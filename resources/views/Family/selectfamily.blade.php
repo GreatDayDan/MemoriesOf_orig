@@ -31,7 +31,14 @@
                                id="DESCRIPTION">
                     </textarea>
                 </p>
-
+                <p>
+                    <input type="hidden" id="familyname" name="fname" value="{{$family->familyname}}"
+                           array('description'->{{$family->description}},
+                                'postid'->{{$family->postid}},
+                                'eventid'->{{$family->eventid}},
+                                'userid'->{{$family->userid}}
+                    )><br><br>
+                </p>
                 <p>
                     <input type='submit' id='submit_id' name='NewFamily'>
                 </p>
