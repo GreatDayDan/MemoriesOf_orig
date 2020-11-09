@@ -54,9 +54,8 @@ class FamilyController extends Controller
         log::debug('gdd 07.1: ');
         ini_set('memory_limit', '4G'); // or you could use 1G
         $userid = $this->getuserid();
-        dd($userid);
 //        log::debug('gdd 07.11: ' . print_r($request,true));
-
+dd($userid);
 //        $validator = Validator::make($request->all(), [
 //            'familyname' => 'required',
 //            'description' => 'required',

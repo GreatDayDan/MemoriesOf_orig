@@ -31,3 +31,7 @@ Route::resource('/store', EventmoController::class); // works
 
 Route::get('/selectfamily', 'App\Http\Controllers\FamilyController@index');// works
 Route::resource('/storefamily', FamilyController::class); // works
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
