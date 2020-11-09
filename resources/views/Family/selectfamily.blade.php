@@ -32,18 +32,26 @@
                     </textarea>
                 </p>
                 <p>
-                    <input type="hidden" id="familyname" name="fname" value="{{$family->familyname}}"
-                           array('description'->{{$family->description}},
-                                'postid'->{{$family->postid}},
-                                'eventid'->{{$family->eventid}},
-                                'userid'->{{$family->userid}}
-                    )><br><br>
-                </p>
+{{--                    <input type="hidden" id="familyname" name="fname" value="{{$family->familyname}}"--}}
+{{--                           array('description'->{{$family->description}},--}}
+{{--                                'postid'->{{$family->postid}},--}}
+{{--                                'eventid'->{{$family->eventid}},--}}
+{{--                                'userid'->{{$family->userid}}--}}
+{{--                    )><br><br>--}}
+{{--                </p>--}}
                 <p>
                     <input type='submit' id='submit_id' name='NewFamily'>
                 </p>
             </div>
           </fieldset>
         </form>
+            if(isset($_POST['submit'])){
+            if(!empty($_POST['family_id'])) {
+            $selected = $_POST['family_id'];
+            echo 'You have chosen: ' . $selected;
+            } else {
+            echo 'Please select the value.';
+            }
+            }
     </div>
 @endsection

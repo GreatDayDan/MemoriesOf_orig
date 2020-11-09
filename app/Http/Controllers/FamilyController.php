@@ -12,6 +12,12 @@ use Illuminate\Support\Facades\Validator;
 
 class FamilyController extends Controller
 {
+    private function getuserid(){
+        $userid = Auth::id();
+        if (! isset($userid)){
+            $userid = 0;}
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,12 +26,8 @@ class FamilyController extends Controller
     public function index()
     {
 
-        $userid = Auth::id();
-        if (! isset($userid)){
-            $userid = 0;}
-
         Log::debug('gdd 05.1 families ');
-        Log::debug('gdd 05.2 family $userId: '. $userid );
+//        Log::debug('gdd 05.2 family $userId: '. $userid );
         $families = Family::all()->SortBy('familyname');
         log::debug('gdd 05.3 found ' . $families->count() . ' families.');
         return view('family.selectfamily', compact(['families']));
@@ -51,12 +53,8 @@ class FamilyController extends Controller
     {
         log::debug('gdd 07.1: ');
         ini_set('memory_limit', '4G'); // or you could use 1G
-//        $userid = Auth::id();
-//        if (!isset($userid)) {
-//            $userid = -1;
-//        }
-        $user = auth()->user();
-dd($request);
+        $userid = $this->getuserid();
+        dd($userid);
 //        log::debug('gdd 07.11: ' . print_r($request,true));
 
 //        $validator = Validator::make($request->all(), [
@@ -88,8 +86,8 @@ dd($request);
                 'postsid' => $request->get('postsid'),
                 'familyname' => $request->get('familyname'),
                 'description' => $request->get('DESCRIPTION')));
-//            $name = $request->input('familyname');
-            dd($family);
+            $name = $request->input('familyname');
+           dd($family);
         Log::debug('gdd 07.14 id: ' . $family->id);
             log::debug('$family: '. var_dump($family));
 

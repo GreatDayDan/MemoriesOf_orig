@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEventmoTable extends Migration
+class CreateEventmosTable extends Migration
 {
     /**
      * Run the migrations.

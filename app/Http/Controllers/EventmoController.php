@@ -11,6 +11,20 @@ use Illuminate\Support\Facades\Validator;
 
 class EventmoController extends Controller
 {
+/**
+* Store a newly created resource in storage.
+*
+* @param  \Illuminate\Http\Request  $request
+* @return \Illuminate\Http\RedirectResponse
+**/
+    public function adddata(Request $request)
+{
+    log::debug('gdd 10.2 adddata');
+    validate($request);
+    dd($request);
+
+}
+
     /**
      * Display a listing of the resource.
      *
