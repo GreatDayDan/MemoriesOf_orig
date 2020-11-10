@@ -167,6 +167,27 @@
                 }
             )
         }
+        function chngfamilydescr(pid){
+            const chdescr = document.getElementById("family_id");
+             alert('alert 11');
+            {{--//use pid to get the description--}}
+            if(chdescr){
+                const idx = chdescr.options[chdescr.selectedIndex].value;
+                alert('alert 13: ' + idx);
+                const pid2 = chdescr.options[idx].value;
+                alert('alert 14: ' + pid2);
+                let currentEvent = jevents.findIndex((event, pid) => event.id == pid);
+                alert('alert 15');
+                let description = jevents[currentEvent].description;
+                alert('alert 16: ' + description);
+                let descriptionField = document.getElementById("description");
+                alert('alert 17');
+                descriptionField.value = description;
+                alert('Descr: ' + descriptionField.value);
+                }
+
+        }
+
 
     function setCustomData(componetname, newvalue) {
         var dataholder = document.getElementById("dataholder");

@@ -1,0 +1,6 @@
+
+[33mIn cors.php line 26:[39m
+[37;41m                                                                                            [39;49m
+[37;41m  syntax error, unexpected ''allowed_methods'' (T_CONSTANT_ENCAPSED_STRING), expecting ']'  [39;49m
+[37;41m                                                                                            [39;49m
+
