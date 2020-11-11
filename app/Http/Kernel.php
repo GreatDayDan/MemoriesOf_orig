@@ -65,4 +65,14 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
+    public function handle($request) {
+        try {
+            return parent::handle($request);
+        }
+        catch (Exception $e) {
+            echo \View::make('frontend_pages.page_404');
+            exit;
+            // throw $e;
+        }
+    }
 }
