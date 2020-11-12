@@ -1,7 +1,7 @@
 <?php
 
+//namespace App\Models;
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 // Posts class instance will refer to posts table in database

@@ -2,8 +2,9 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
-use Hash;
+//use Hash;
 use App\Model\Users                   ;
 
 class LoginRegister extends Component

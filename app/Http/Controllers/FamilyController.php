@@ -15,7 +15,13 @@ class FamilyController extends Controller
     private function getuserid(){
         $userid = Auth::id();
         if (! isset($userid)){
-            $userid = 0;}
+            $userid = -10;}
+
+    }
+    private function getuser(){
+        $user = Auth::user();
+        if (! isset($user)){
+            $user = null;}
 
     }
     /**
@@ -53,9 +59,10 @@ class FamilyController extends Controller
     {
         log::debug('gdd 07.1: ');
         ini_set('memory_limit', '4G'); // or you could use 1G
-        $userid = $this->getuserid();
+
+
 //        log::debug('gdd 07.11: ' . print_r($request,true));
-dd($userid);
+//dd($userid);
 //        $validator = Validator::make($request->all(), [
 //            'familyname' => 'required',
 //            'description' => 'required',
@@ -78,20 +85,27 @@ dd($userid);
 //            // store
 
 //           Log::debug('gdd 07.13 succeeded id: ' . $request->request->#parameters->_token);
-            $family = new family(array(
+//            $family = new family(array(
+////                'userid' => $request->get('userid'),
 //                'userid' => $request->get('userid'),
-                'userid' => $request->get('userid'),
-                'eventid' => $request->get('eventid'),
-                'postsid' => $request->get('postsid'),
-                'familyname' => $request->get('familyname'),
-                'description' => $request->get('DESCRIPTION')));
-            $name = $request->input('familyname');
-           dd($family);
+//                'eventid' => $request->get('eventid'),
+//                'postsid' => $request->get('postsid'),
+//                'familyname' => $request->get('familyname'),
+//                'description' => $request->get('DESCRIPTION')));
+//            $name = $request->input('familyname');
+//           dd($family);
+
+        $family = new family(array(
+            'userid' => 1,
+            'eventid' => -13,
+            'postsid' => -13,
+            'familyname' => "My 3rd Fam",
+            'description' => "My 3rd  descr."));
+
         Log::debug('gdd 07.14 id: ' . $family->id);
             log::debug('$family: '. var_dump($family));
-
             $family->save();
-            Log::debug('gdd 07.15 saved. Return to family view' . $family->id);
+            Log::debug('gdd 07.15 saved. Return to family view, family->id: ' . $family->id);
 //        return view ('events');
             return redirect('/selectfamily')->with('success', 'family saved!');
 

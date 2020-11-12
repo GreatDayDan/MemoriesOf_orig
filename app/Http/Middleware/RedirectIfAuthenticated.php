@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class RedirectIfAuthenticated
 {
@@ -18,7 +19,7 @@ class RedirectIfAuthenticated
      * @return mixed
      */
     public function handle(Request $request, Closure $next, ...$guards)
-    {
+    { log::debug('gdd 20.1 RedirIfAuth');
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {

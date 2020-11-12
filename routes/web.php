@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Log;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Auth::routes();
+Auth::routes();
+Route::post('login', [ 'as' => 'login', 'uses' => 'LoginController@do']);
+
 Route::resource('eventmo', EventmoController::class);
 Route::get('/', function () {
     log::debug('gdd 01.1');
@@ -63,4 +65,20 @@ Route::get('user/{id}/posts', 'UserController@user_posts')->where('id', '[0-9]+'
 // display single post
 Route::get('/{slug}', ['as' => 'post', 'uses' => 'PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
 
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+
+Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+});
 

@@ -1,23 +1,25 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-
-use App\Models\Posts;
 use App\Http\Requests\PostFormRequest;
+use App\Posts;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     public function index()
-    {
+    {  log::debug('gdd 18.3 Posts.index');
         //fetch 5 posts from database which are active and latest
-        $posts = Posts::where('active',1)->orderBy('created_at','desc')->paginate(5);
+        $posts = Posts::where('active', 1)->orderBy('created_at', 'desc')->paginate(5);
         //page heading
         $title = 'Latest Posts';
         //return home2.blade.php template from resources/views folder
         return view('home')->withPosts($posts)->withTitle($title);
     }
+
     public function create(Request $request)
     {
         //
@@ -27,6 +29,7 @@ class PostController extends Controller
             return redirect('/')->withErrors('You have not sufficient permissions for writing post');
         }
     }
+
     public function store(PostFormRequest $request)
     {
         $post = new Posts();
@@ -50,23 +53,25 @@ class PostController extends Controller
         $post->save();
         return redirect('edit/' . $post->slug)->withMessage($message);
     }
+
     public function show($slug)
     {
-        $post = Posts::where('slug',$slug)->first();
-        if(!$post)
-        {
+        $post = Posts::where('slug', $slug)->first();
+        if (!$post) {
             return redirect('/')->withErrors('requested page not found');
         }
         $comments = $post->comments;
         return view('posts.show')->withPost($post)->withComments($comments);
     }
-    public function edit(Request $request,$slug)
+
+    public function edit(Request $request, $slug)
     {
-        $post = Posts::where('slug',$slug)->first();
-        if($post && ($request->user()->id == $post->author_id || $request->user()->is_admin()))
-            return view('posts.edit')->with('post',$post);
+        $post = Posts::where('slug', $slug)->first();
+        if ($post && ($request->user()->id == $post->author_id || $request->user()->is_admin()))
+            return view('posts.edit')->with('post', $post);
         return redirect('/')->withErrors('you have not sufficient permissions');
     }
+
     public function update(Request $request)
     {
         //
@@ -102,19 +107,18 @@ class PostController extends Controller
             return redirect('/')->withErrors('you have not sufficient permissions');
         }
     }
+
     public function destroy(Request $request, $id)
     {
         //
         $post = Posts::find($id);
-        if($post && ($post->author_id == $request->user()->id || $request->user()->is_admin()))
-        {
+        if ($post && ($post->author_id == $request->user()->id || $request->user()->is_admin())) {
             $post->delete();
             $data['message'] = 'Post deleted Successfully';
-        }
-        else
-        {
+        } else {
             $data['errors'] = 'Invalid Operation. You have not sufficient permissions';
         }
         return redirect('/')->with($data);
     }
 }
+

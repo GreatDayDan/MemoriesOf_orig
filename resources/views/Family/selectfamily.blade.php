@@ -15,8 +15,6 @@
                         <option name="pid" value="'Select a family'">Select an family</option>
                     @foreach($families as $family)
                         <option name="pid" value="{{$family->id}}" id="family">{{$family->familyname}}</option>
-
-{{--                    <option name="pid" value="$family->id" id="family">$family->familyname</option>--}}
                     @endforeach
                 </select>
                 <p>
