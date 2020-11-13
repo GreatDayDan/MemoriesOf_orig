@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventmoController;
 use Illuminate\Support\Facades\Log;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,31 +40,31 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // check for logged in user
 Route::middleware(['auth'])->group(function () {
     // show new post form
-    Route::get('new-post', 'PostController@create');
+    Route::get('new-post', 'App\Http\Controllers\PostController@create');
     // save new post
-    Route::post('new-post', 'PostController@store');
+    Route::post('new-post', 'App\Http\Controllers\PostController@store');
     // edit post form
-    Route::get('edit/{slug}', 'PostController@edit');
+    Route::get('edit/{slug}', 'App\Http\Controllers\PostController@edit');
     // update post
-    Route::post('update', 'PostController@update');
+    Route::post('update', 'App\Http\Controllers\PostController@update');
     // delete post
-    Route::get('delete/{id}', 'PostController@destroy');
+    Route::get('delete/{id}', 'App\Http\Controllers\PostController@destroy');
     // display user's all posts
-    Route::get('my-all-posts', 'UserController@user_posts_all');
+    Route::get('my-all-posts', 'App\Http\Controllers\UserController@user_posts_all');
     // display user's drafts
-    Route::get('my-drafts', 'UserController@user_posts_draft');
+    Route::get('my-drafts', 'App\Http\Controllers\UserController@user_posts_draft');
     // add comment
-    Route::post('comment/add', 'CommentController@store');
+    Route::post('comment/add', 'App\Http\Controllers\CommentController@store');
     // delete comment
-    Route::post('comment/delete/{id}', 'CommentController@distroy');
+    Route::post('comment/delete/{id}', 'App\Http\Controllers\CommentController@distroy');
 });
 
 //users profile
-Route::get('user/{id}', 'UserController@profile')->where('id', '[0-9]+');
+Route::get('user/{id}', 'App\Http\Controllers\UserController@profile')->where('id', '[0-9]+');
 // display list of posts
-Route::get('user/{id}/posts', 'UserController@user_posts')->where('id', '[0-9]+');
+Route::get('user/{id}/posts', 'App\Http\Controllers\UserController@user_posts')->where('id', '[0-9]+');
 // display single post
-Route::get('/{slug}', ['as' => 'post', 'uses' => 'PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
+Route::get('/{slug}', ['as' => 'post', 'uses' => 'App\Http\Controllers\PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
 
 
 
@@ -76,9 +77,9 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
-	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+//	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
+//	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+//	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+//	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
 
