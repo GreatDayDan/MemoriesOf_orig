@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Log;
 |
 */
 Auth::routes();
-Route::post('login', [ 'as' => 'login', 'uses' => 'LoginController@do']);
+Route::post('/login', [ 'as' => 'login', 'uses' => 'LoginController@do']);
 
 Route::resource('eventmo', EventmoController::class);
 Route::get('/', function () {
@@ -31,10 +31,10 @@ route::get('/frontpage', function() {
 });
 
 Route::get('/selectevent', 'App\Http\Controllers\EventmoController@index');// works
-Route::resource('/store', EventmoController::class); // works
+Route::resource('/store', App\Http\Controllers\EventmoController::class); // works
 Route::get('/selectfamily', 'App\Http\Controllers\FamilyController@index');// works
 Route::resource('/storefamily', FamilyController::class); // works
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 // check for logged in user
@@ -68,18 +68,19 @@ Route::get('/{slug}', ['as' => 'post', 'uses' => 'App\Http\Controllers\PostContr
 
 
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes();
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+//Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
+    log::debug('021.1 auth ');
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-//	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
-//	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-//	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
-//	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
 });
 

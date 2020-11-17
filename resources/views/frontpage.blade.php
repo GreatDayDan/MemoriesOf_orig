@@ -1,4 +1,4 @@
-    @extends('Layouts.app')
+@extends('Layouts.app')
 @section('content')
     <div class="container">
         <div class="mo">

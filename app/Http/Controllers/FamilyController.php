@@ -57,7 +57,7 @@ class FamilyController extends Controller
      */
     public function store(Request $request)
     {
-        log::debug('gdd 07.1: ');
+        log::debug('gdd 07.1: family.store ');
         ini_set('memory_limit', '4G'); // or you could use 1G
 
 

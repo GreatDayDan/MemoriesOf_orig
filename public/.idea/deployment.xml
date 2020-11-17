@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="MemoriesOf">
     <serverData>
       <paths name="L8">
         <serverdata>
@@ -19,11 +19,18 @@
       <paths name="MemoriesOf">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping local="$PROJECT_DIR$" web="E:\wamp64\www\MemoriesOf\public" />
           </mappings>
         </serverdata>
       </paths>
       <paths name="dans2">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="dans5">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

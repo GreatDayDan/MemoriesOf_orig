@@ -21,7 +21,7 @@ class EventmoController extends Controller
 {
     log::debug('gdd 10.2 adddata');
     validate($request);
-    dd($request);
+//    dd($request);
 
 }
 
@@ -57,7 +57,7 @@ class EventmoController extends Controller
      */
     public function store(Request $request)
     {   ini_set('memory_limit', '4G'); // or you could use 1G
-        log::debug('gdd 07.1: ');
+        log::debug('gdd 07.1: Eventmo.Store ');
 //        log::debug('gdd 07.11: ' . print_r($request,true));
 
         $validator = Validator::make($request->all(), [

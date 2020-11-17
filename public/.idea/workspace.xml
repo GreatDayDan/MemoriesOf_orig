@@ -1,7 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a8e1cd1-5327-4b04-a090-acd98c58f035" name="Default Changelist" comment="" />
+    <list default="true" id="7a8e1cd1-5327-4b04-a090-acd98c58f035" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../app/Http/Controllers/PageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Http/Requests/PasswordRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Http/Requests/ProfileRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Http/Requests/UserRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Rules/CurrentPasswordCheckRule.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/Rules/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../database/seeders/UsersTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/now-ui-dashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/now-ui-dashboard.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/now-ui-dashboard.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/demo/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/demo/demo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/nucleo-license.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/nucleo-outline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/nucleo-outline.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/nucleo-outline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/nucleo-outline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/apple-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/bg14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/bg16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/bg5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/default-avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/mike.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/now-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/now-ui-dashboard.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/core/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/core/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/core/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/now-ui-dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/now-ui-dashboard.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/now-ui-dashboard.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/plugins/bootstrap-notify.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/plugins/chartjs.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/plugins/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_alerts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_checkboxes-radio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_fixed-plugin.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_footers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_misc.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_nucleo-outline.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_page-header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_sidebar-and-main-panel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_typography.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/cards/_card-chart.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/cards/_card-map.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/cards/_card-plain.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/cards/_card-user.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_cards.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_page-header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_sidebar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_transparency.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/mixins/_vendor-prefixes.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/plugins/_plugin-animate-bootstrap-notify.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/scss/now-ui-dashboard/plugins/_plugin-perfect-scrollbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/js/components/ExampleComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/Layouts/footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/Layouts/navbars/navs/auth.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/Layouts/navbars/navs/guest.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/Layouts/navbars/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/Layouts/page_template/auth.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/Layouts/page_template/guest.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/alerts/error_self_update.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/alerts/errors.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/alerts/feedback.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/alerts/migrations_check.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/alerts/success.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/pages/icons.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/pages/maps.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/pages/notifications.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/pages/table.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/pages/typography.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/pages/upgrade.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../resources/views/profile/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../routes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/CommentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/CommentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/EventmoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/EventmoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/FamilyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/FamilyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Http/Requests/UpdatePostFormRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Http/Requests/UpdatePostFormRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/../app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/frontpage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/frontpage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +134,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ji4NdRD9eY63G41LtvpR6o0BA8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -36,10 +164,22 @@
       <option name="presentableId" value="Default" />
       <updated>1604273540102</updated>
       <workItem from="1604273541153" duration="1073000" />
+      <workItem from="1605642271933" duration="81000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

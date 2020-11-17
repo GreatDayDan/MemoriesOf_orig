@@ -16,6 +16,7 @@ class UserController extends Controller
      */
     public function index(User $model)
     {
+        log::debug('gdd 031.1 user index');
         return view('users.index', ['users' => $model->paginate(15)]);
     }
 }
