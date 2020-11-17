@@ -26,7 +26,7 @@ class UpdatePostFormRequest extends FormRequest
      * @return array
      */
    public function rules()
-    {   log::debug('gdd 10.1 rules');
+    {   log::debug('gdd 10.1 update rules');
         return [
             'eventname' => 'required|string|unique:events',
             'description' => 'required|min:8|max:255|string',
