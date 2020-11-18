@@ -15,13 +15,14 @@ class EventmoController extends Controller
 * Store a newly created resource in storage.
 *
 * @param  \Illuminate\Http\Request  $request
-* @return \Illuminate\Http\RedirectResponse
+* @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
 **/
     public function adddata(Request $request)
 {
     log::debug('gdd 10.2 adddata');
-    validate($request);
+//    validate($request);
 //    dd($request);
+     return view('eventmo.selectevent');
 
 }
 
@@ -32,7 +33,7 @@ class EventmoController extends Controller
      */
     public function index()
     {
-        Log::debug('gdd 05.1 eventmos index() EventmoController');
+        Log:: debug('gdd 05.1 eventmos index() EventmoController');
         $eventmos = Eventmo::all()->SortBy('eventname');
         log::debug('gdd 05.2 found ' . $eventmos->count() . ' events.');
         return view('eventmo.selectevent', compact(['eventmos']));
@@ -94,11 +95,10 @@ class EventmoController extends Controller
             $eventmo->save();
 //            Log::debug('gdd 07.15 saved. Return to events view' . $eventmo->id);
 //    s    return view ('events');
-    return redirect('/selectevent')->with('success', 'event saved!');
+           return redirect('/selectevent')->with('success', 'event saved!');
 
             // redirect
 //            Session::flash('message', 'Successfully created Event!');
-            return Redirect::to('frontpage');
         }
     }
 //         return back()->withSuccess('Event added successfullyz!');

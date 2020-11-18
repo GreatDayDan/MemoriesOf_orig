@@ -53,7 +53,7 @@ class FamilyController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -84,9 +84,8 @@ class FamilyController extends Controller
 //        } else {
 //            // store
 
-//           Log::debug('gdd 07.13 succeeded id: ' . $request->request->#parameters->_token);
+//           Log::debug('gdd 07.13 succeeded id: ') ;//. $request->request->#parameters->_token);
 //            $family = new family(array(
-////                'userid' => $request->get('userid'),
 //                'userid' => $request->get('userid'),
 //                'eventid' => $request->get('eventid'),
 //                'postsid' => $request->get('postsid'),
@@ -97,10 +96,10 @@ class FamilyController extends Controller
 
         $family = new family(array(
             'userid' => 1,
-            'eventid' => -13,
-            'postsid' => -13,
-            'familyname' => "My 3rd Fam",
-            'description' => "My 3rd  descr."));
+            'eventid' => -11,
+            'postsid' => -125,
+            'familyname' => "My 1st",
+            'description' => "My 1st descr."));
 
         Log::debug('gdd 07.14 id: ' . $family->id);
             log::debug('$family: '. var_dump($family));
@@ -121,11 +120,11 @@ class FamilyController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Family  $family
-     * @return \Illuminate\Http\Response
+     * @return void
      */
     public function show(Family $family)
     {
-        //
+        return;
     }
 
     /**
@@ -136,7 +135,7 @@ class FamilyController extends Controller
      */
     public function edit(Family $family)
     {
-        //
+       return;
     }
 
     /**
@@ -170,7 +169,7 @@ class FamilyController extends Controller
      */
     public function destroy(Family $family)
     {
-        //
+        return(null);
     }
 }
 

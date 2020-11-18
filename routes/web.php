@@ -20,8 +20,13 @@ use Illuminate\Support\Facades\Log;
 Auth::routes();
 Route::post('/login', [ 'as' => 'login', 'uses' => 'LoginController@do']);
 
-Route::resource('eventmo', EventmoController::class);
+//Route::resource('eventmo', EventmoController::class);
 Route::get('/', function () {
+    log::debug('gdd 01.1');
+    return view('welcome');
+});
+
+Route::get('/home', function () {
     log::debug('gdd 01.1');
     return view('welcome');
 });

@@ -12,7 +12,7 @@
             <div class="form-group">
                 <label for="family_id">Choose a Family</label>
                 <select name="family_id" id="family_id" class="form-control" onchange="chngfamilydescr(1)">
-                        <option name="pid" value="'Select a family'">Select an family</option>
+                        <option name="pid" value="'Select a family'">Select a family</option>
                     @foreach($families as $family)
                         <option name="pid" value="{{$family->id}}" id="family">{{$family->familyname}}</option>
                     @endforeach
@@ -43,13 +43,13 @@
             </div>
           </fieldset>
         </form>
-            if(isset($_POST['submit'])){
-            if(!empty($_POST['family_id'])) {
-            $selected = $_POST['family_id'];
-            echo 'You have chosen: ' . $selected;
-            } else {
-            echo 'Please select the value.';
-            }
-            }
+{{--            if(isset($_POST['submit'])){--}}
+{{--            if(!empty($_POST['family_id'])) {--}}
+{{--            $selected = $_POST['family_id'];--}}
+{{--            echo 'You have chosen: ' . $selected;--}}
+{{--            } else {--}}
+{{--            echo 'Please select the value.';--}}
+{{--            }--}}
+{{--            }--}}
     </div>
 @endsection

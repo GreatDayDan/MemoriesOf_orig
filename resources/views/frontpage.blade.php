@@ -8,8 +8,8 @@
                     <form style="height: 104px;" target="_top"
                           method="post" name="home">
                         <fieldset>
-                            <legend>MemoriesOf</legend>
-                            Sharing special app memories<br>
+                            <legend>MemoriesOf u & me, kid</legend>
+                            xxx Sharing special app memories<br>
                             <br>
                             We all have memories of people, places, things and/or events. Memories Of is a place where you can share those memories with friends and family. Something that you post might trigger a memory that they have of the same people, places, things and/or events.<br>
                             For example:<br>
