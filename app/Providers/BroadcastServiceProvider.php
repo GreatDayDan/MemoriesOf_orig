@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Broadcast;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 
 class BroadcastServiceProvider extends ServiceProvider
@@ -13,7 +14,7 @@ class BroadcastServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    {   log::debug('gdd 023.1 BroadcastServiceProvider boot');
         Broadcast::routes();
 
         require base_path('routes/channels.php');

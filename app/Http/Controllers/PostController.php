@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Posts;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -12,6 +13,7 @@ class PostController extends Controller
 {
     public function index()
     {
+        log::debug('gdd 070.1 PostController index');
         //fetch 5 posts from database which are active and latest
         $posts = Posts::where('active',1)->orderBy('created_at','desc')->paginate(5);
         //page heading
@@ -21,7 +23,7 @@ class PostController extends Controller
     }
     public function create(Request $request)
     {
-        //
+        log::debug('gdd 071.1 create');
         if ($request->user()->can_post()) {
             return view('posts.create');
         } else {
@@ -30,6 +32,7 @@ class PostController extends Controller
     }
     public function store(PostFormRequest $request)
     {
+        log::debug('gdd 072.1 store');
         $post = new Posts();
         $post->title = $request->get('title');
         $post->body = $request->get('body');
@@ -53,6 +56,7 @@ class PostController extends Controller
     }
     public function show($slug)
     {
+        log::debug('gdd 073.1 show');
         $post = Posts::where('slug',$slug)->first();
         if(!$post)
         {
@@ -62,7 +66,7 @@ class PostController extends Controller
         return view('posts.show')->withPost($post)->withComments($comments);
     }
     public function edit(Request $request,$slug)
-    {
+    {log::debug('gdd 074.1 edit');
         $post = Posts::where('slug',$slug)->first();
         if($post && ($request->user()->id == $post->author_id || $request->user()->is_admin()))
             return view('posts.edit')->with('post',$post);
@@ -70,7 +74,7 @@ class PostController extends Controller
     }
     public function update(Request $request)
     {
-        //
+        log::debug('gdd 075.1 update');
         $post_id = $request->input('post_id');
         $post = Posts::find($post_id);
         if ($post && ($post->author_id == $request->user()->id || $request->user()->is_admin())) {
@@ -105,7 +109,7 @@ class PostController extends Controller
     }
     public function destroy(Request $request, $id)
     {
-        //
+        log::debug('gdd 076.0 destroy');
         $post = Posts::find($id);
         if($post && ($post->author_id == $request->user()->id || $request->user()->is_admin()))
         {

@@ -96,10 +96,10 @@ class FamilyController extends Controller
 
         $family = new family(array(
             'userid' => 1,
-            'eventid' => -11,
-            'postsid' => -125,
-            'familyname' => "My 1st",
-            'description' => "My 1st descr."));
+            'eventid' => -12,
+            'postsid' => -135,
+            'familyname' => "My 2nd",
+            'description' => "My 2nd descr."));
 
         Log::debug('gdd 07.14 id: ' . $family->id);
             log::debug('$family: '. var_dump($family));

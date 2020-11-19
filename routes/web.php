@@ -22,16 +22,16 @@ Route::post('/login', [ 'as' => 'login', 'uses' => 'LoginController@do']);
 
 //Route::resource('eventmo', EventmoController::class);
 Route::get('/', function () {
-    log::debug('gdd 01.1');
+    log::debug('gdd 01.1, get(/');
     return view('welcome');
 });
 
 Route::get('/home', function () {
-    log::debug('gdd 01.1');
+    log::debug('gdd 01.1, get( / home');
     return view('welcome');
 });
 route::get('/frontpage', function() {
-    log::debug('gdd 01.2');
+    log::debug('gdd 01.2 get(/frontpage');
     return view ('frontpage');
 });
 
@@ -45,6 +45,7 @@ Route::resource('/storefamily', FamilyController::class); // works
 // check for logged in user
 Route::middleware(['auth'])->group(function () {
     // show new post form
+    {log::debug('gdd 061.1 middleware([auth])->group');}
     Route::get('new-post', 'App\Http\Controllers\PostController@create');
     // save new post
     Route::post('new-post', 'App\Http\Controllers\PostController@store');
@@ -80,12 +81,12 @@ Route::get('/{slug}', ['as' => 'post', 'uses' => 'App\Http\Controllers\PostContr
 
 //Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
-Route::group(['middleware' => 'auth'], function () {
-    log::debug('021.1 auth ');
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
-	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
-});
+//Route::group(['middleware' => 'auth'], function () {
+//    log::debug('021.1 auth ');
+//	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+//	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
+//	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+//	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+//	Route::get('{page}', ['as' => 'page.index', 'uses' => 'App\Http\Controllers\PageController@index']);
+//});
 

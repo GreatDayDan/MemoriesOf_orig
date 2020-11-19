@@ -22,6 +22,7 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+
     /**
      * Where to redirect users after login.
      *
@@ -36,7 +37,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        log::debug('gdd 301.1');
+        log::debug('gdd 351.1, Auth construct.');
         $this->middleware('guest')->except('logout');
     }
 }
